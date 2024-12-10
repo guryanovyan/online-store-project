@@ -20,9 +20,6 @@ export const checkAuth = async () => {
 }
 
 export const checkRole = async () => {
-    const token = localStorage.getItem('token');
-    console.log('Token being sent:', token);
     const {data} = await $authHost.get('api/user/auth/role');
-    console.log('Role data:', data); // Посмотреть, что приходит от сервера
     return data.role === 'ADMIN';
 }
