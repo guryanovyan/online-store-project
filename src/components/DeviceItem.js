@@ -12,7 +12,7 @@ const DeviceItem = ({device}) => {
                 <Image width={150} height={150} src={'http://localhost:5000/' + device.img} />
                 <div className={"d-flex justify-content-between align-items-center mt-1"}>
                     <div className={"text-black-50"}>
-                        Samsung...
+                        {device.price}€
                     </div>
                     <div className={"d-flex align-items-center"}>
                         <div>{device.rating}</div>

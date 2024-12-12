@@ -30,3 +30,16 @@ export const fetchOneDevice = async (id) => {
     const {data} = await $host.get('api/device/' + id);
     return data;
 }
+
+export const deviceToCart = async (device) => {
+    const {data} = await $authHost.post('/api/cart', device);
+    return data;
+}
+export const removeFromCart = async (deviceId) => {
+    const {data} = await $authHost.delete('/api/cart', {data: {deviceId}});
+    return data;
+}
+export const fetchCart = async () => {
+    const {data} = await $authHost.get('/api/cart');
+    return data;
+}

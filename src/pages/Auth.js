@@ -29,13 +29,14 @@ const Auth = observer (() => {
             try {
                 const isAdmin = await checkRole();
                 user.setIsAdmin(isAdmin);
-                console.log(user.isAdmin)
 
             } catch {
                 user.setIsAdmin(false);
             }
 
             navigate(SHOP_ROUTE);
+            window.location.reload();
+
         } catch (e) {
             alert(e.response.data.message);
         }

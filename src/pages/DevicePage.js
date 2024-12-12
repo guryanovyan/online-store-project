@@ -1,16 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
 import bigStar from '../assets/bigStar.png'
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {fetchOneDevice} from "../http/deviceAPI";
+import {Context} from "../index";
+import {deviceToCart} from "../http/deviceAPI";
+import {CART_ROUTE} from "../utils/const";
 
 const DevicePage = () => {
     const [device, setDevice] = useState({info:[]})
     const {id} = useParams();
+    const {user} = useContext(Context);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchOneDevice(id).then(data => setDevice(data))
     }, []);
+
+    const addToCart = () => {
+        deviceToCart({deviceId: id}).then(() => navigate(CART_ROUTE));
+    }
 
     return (
         <Container className={"mt-3"}>
@@ -35,7 +44,18 @@ const DevicePage = () => {
                         style={{width: 300, height: 300, fontSize:32, border: "5px solid lightgrey"}}
                     >
                         <h3>From: {device.price} €</h3>
-                        <Button variant={"outline-dark"}>Add to cart</Button>
+                        {user.isAuth ?
+                            <Button
+                                variant={"outline-dark"}
+                                onClick={addToCart}
+                            >
+                                Add to cart
+                            </Button>
+                        :
+                            <h4 className={"text-center"}>
+                                Authorize to be able to add to cart
+                            </h4>
+                        }
                     </Card>
                 </Col>
             </Row>
