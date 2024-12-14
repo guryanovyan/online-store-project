@@ -12,6 +12,7 @@ export default class DeviceStore {
         this._limit = 3; // Amount of devices on 1 page
         this._cart = [];
         this._cartDevices = [];
+        this._cartDeviceQty = 1;
         makeAutoObservable(this);
     }
 
@@ -47,6 +48,9 @@ export default class DeviceStore {
     setCartDevices(cartDevices) {
         this._cartDevices = cartDevices;
     }
+    setCartDeviceQty(quantity) {
+        this._cartDeviceQty = quantity;
+    }
 
     get brands() {
         return this._brands;
@@ -77,5 +81,8 @@ export default class DeviceStore {
     }
     get cartDevices() {
         return this._cartDevices;
+    }
+    get cartDeviceQty() {
+        return this._cartDeviceQty;
     }
 }
