@@ -10,9 +10,7 @@ export default class DeviceStore {
         this._page = 1; // Current page
         this._totalCount = 0; // All amount of devices on current request
         this._limit = 3; // Amount of devices on 1 page
-        this._cart = [];
         this._cartDevices = [];
-        this._cartDeviceQty = 1;
         makeAutoObservable(this);
     }
 
@@ -42,14 +40,8 @@ export default class DeviceStore {
     setLimit(limit) {
         this._limit = limit;
     }
-    setCart(cart) {
-        this._cart = cart;
-    }
     setCartDevices(cartDevices) {
         this._cartDevices = cartDevices;
-    }
-    setCartDeviceQty(quantity) {
-        this._cartDeviceQty = quantity;
     }
 
     get brands() {
@@ -76,13 +68,7 @@ export default class DeviceStore {
     get limit() {
         return this._limit;
     }
-    get cart() {
-        return this._cart;
-    }
     get cartDevices() {
         return this._cartDevices;
-    }
-    get cartDeviceQty() {
-        return this._cartDeviceQty;
     }
 }

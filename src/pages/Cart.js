@@ -13,9 +13,6 @@ const Cart = observer (() => {
     useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
-    }, [])
-
-    useEffect(() => {
         fetchCart().then(data => {
             device.setCartDevices(data);
         }).finally(() => setLoading(false));

@@ -47,3 +47,12 @@ export const fetchCart = async () => {
     const {data} = await $authHost.get('/api/cart');
     return data;
 }
+
+export const rateDevice = async (deviceId, userRating) => {
+    const {data} = await $authHost.post('/api/rating', {deviceId, userRating});
+    return data;
+}
+export const fetchRating = async (id) => {
+    const {data} = await $authHost.get('/api/rating/' + id);
+    return data;
+}
