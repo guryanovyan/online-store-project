@@ -22,7 +22,7 @@
   "homepage": "https://guryanovyan.github.io/online-store-project",
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run test",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
