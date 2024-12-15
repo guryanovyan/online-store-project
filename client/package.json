@@ -9,7 +9,6 @@
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
-    "gh-pages": "^6.2.0",
     "jwt-decode": "^4.0.0",
     "mobx": "^6.13.5",
     "mobx-react-lite": "^4.0.7",
@@ -20,11 +19,13 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://guryanovyan.github.io/online-store-project",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run test",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
