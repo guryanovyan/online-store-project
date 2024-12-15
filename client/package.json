@@ -9,6 +9,7 @@
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.7",
+    "gh-pages": "^6.2.0",
     "jwt-decode": "^4.0.0",
     "mobx": "^6.13.5",
     "mobx-react-lite": "^4.0.7",
@@ -23,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
