@@ -1,13 +1,15 @@
 # Online store project
 
-## PERN stack project of an online store, where an admin can upload items and categorize them, user can easily find items and add them to cart.
+## PERN stack project of an online store, 
+The admin can upload products and classify them, the user can easily find products and add them to cart.
 
-### Backend: Node.js + Express.js;
-### Frontend: React;
-### Database: PostgreSQL;
-### CSS: Bootstrap;
+### Technologies used:
+- **Backend:** Node.js + Express.js;
+- **Frontend:** React;
+- **Database:** PostgreSQL;
+- **CSS:** Bootstrap;
 
-##
+## Launch
 
 **Server launch**
 ```
